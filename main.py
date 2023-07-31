@@ -18,6 +18,8 @@ print(div)
 print(remainder)
 print(diff)
 '''
+import tkinter
+
 '''
 
 list1= [2,3,5,1,106,'ray',True]
@@ -257,7 +259,7 @@ if day >=1 and day <=30 and :
 message =  f'your birthday is {day}-- {month}-- {year}'
 print(message)
 '''
-
+'''
 day = int(input("enter day: "))
 month = int(input("enter the month: "))
 year = int(input("enter the year: "))
@@ -271,3 +273,11 @@ try:
 
 except ValueError:
     print("input the right date")
+
+'''
+
+
+fruits = ['banana', 'orange', 'apple','orange']
+
+for x in fruits:
+    print(x)
