@@ -18,6 +18,8 @@ print(div)
 print(remainder)
 print(diff)
 '''
+import tkinter
+
 '''
 
 list1= [2,3,5,1,106,'ray',True]
@@ -257,7 +259,7 @@ if day >=1 and day <=30 and :
 message =  f'your birthday is {day}-- {month}-- {year}'
 print(message)
 '''
-
+'''
 day = int(input("enter day: "))
 month = int(input("enter the month: "))
 year = int(input("enter the year: "))
@@ -271,3 +273,25 @@ try:
 
 except ValueError:
     print("input the right date")
+
+'''
+
+
+if __name__ == "__main__":
+    user_input = input("Enter a date (dd--mm--yyyy): ")
+
+    try:
+        day, month, year = map(int, user_input.split('--'))
+        is_leap = year % 400 == 0 or (year % 100 != 0 and year % 4 == 0)
+
+        if 1 <= month <= 12 and len(str(year)) == 4:
+            days_in_month = [31, 29 if is_leap else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            if 1 <= day <= days_in_month[month - 1]:
+                formatted_date = f"{day:02d}--{month:02d}--{year:04d}"
+                print(formatted_date)
+            else:
+                print("Invalid day for the given month.")
+        else:
+            print("Invalid date format. Please use the format 'dd--mm--yyyy'.")
+    except ValueError:
+        print("Invalid date format. Please use the format 'dd--mm--yyyy'.")
